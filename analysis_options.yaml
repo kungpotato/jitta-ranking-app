@@ -1,0 +1,51 @@
+include: package:very_good_analysis/analysis_options.5.0.0.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  exclude:
+    - "**/*.g.dart"
+    - "lib/firebase_options.dart"
+  language:
+    strict-raw-types: true
+  errors:
+    missing_return: error
+    unused_catch_clause: error
+    unused_catch_stack: error
+    unused_element: warning
+    unused_field: warning
+    unused_local_variable: warning
+    unused_import: error
+    unused_shown_name: error
+    dead_code: error
+    inference_failure_on_function_return_type: ignore
+    inference_failure_on_untyped_parameter: ignore
+    inference_failure_on_instance_creation: ignore
+    inference_failure_on_function_invocation: ignore
+    inference_failure_on_generic_invocation: ignore
+    avoid_dynamic_calls: ignore
+    unnecessary_string_escapes: ignore
+    flutter_style_todos: ignore
+
+linter:
+  rules:
+    #    ------------ short-circuiting or conditionals ----------
+    avoid_returning_null_for_void: true
+    prefer_expression_function_bodies: true
+    prefer_const_constructors: true
+    #    ----------------------------------------------------------------
+    public_member_api_docs: false
+    avoid_positional_boolean_parameters: false
+    use_setters_to_change_properties: false
+    cascade_invocations: false
+    lines_longer_than_80_chars: false
+    sort_pub_dependencies: false
+    omit_local_variable_types: false
+    parameter_assignments: false
+    avoid_multiple_declarations_per_line: false
+    one_member_abstracts: false
+    eol_at_end_of_file: false
+    no_default_cases: false
+    constant_identifier_names: false
+    always_use_package_imports: false
+    directives_ordering: false

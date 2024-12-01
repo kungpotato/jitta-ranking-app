@@ -1,0 +1,36 @@
+name: jitta_ranking
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  very_good_analysis: ^6.0.0
+  rxdart: ^0.28.0
+  flutter_riverpod: ^2.6.1
+  riverpod_generator: ^2.6.3
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  graphql_flutter: ^5.1.2
+  flutter_hooks: ^0.20.5
+  dio: ^5.7.0
+  hooks_riverpod: ^2.6.1
+  google_fonts: ^6.2.1
+  icons_plus: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+
+
+flutter:
+
+  uses-material-design: true
