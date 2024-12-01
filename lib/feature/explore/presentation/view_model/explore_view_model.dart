@@ -3,20 +3,20 @@ import 'package:jitta_ranking/feature/explore/domain/entities/country/country.da
 import 'package:jitta_ranking/feature/explore/domain/usecases/fetch_country_usecase.dart';
 import 'package:jitta_ranking/feature/explore/repository/explore_repository.dart';
 
-final fetchPokemonListUseCaseProvider = Provider<FetchCountryUseCase>((ref) {
+final fetchCountryListUseCaseProvider = Provider<FetchCountryUseCase>((ref) {
   final repository = ref.watch(exploreRepositoryProvider);
   return FetchCountryUseCase(repository);
 });
 
-final stockDetailProvider =
-    StateNotifierProvider<StockDetailViewModel, AsyncValue<List<Country>>>(
+final exploreProvider =
+    StateNotifierProvider<ExploreViewModel, AsyncValue<List<Country>>>(
         (ref) {
-  final fetchPokemonListUseCase = ref.watch(fetchPokemonListUseCaseProvider);
-  return StockDetailViewModel(fetchPokemonListUseCase);
+  final fetchCountryListUseCase = ref.watch(fetchCountryListUseCaseProvider);
+  return ExploreViewModel(fetchCountryListUseCase);
 });
 
-class StockDetailViewModel extends StateNotifier<AsyncValue<List<Country>>> {
-  StockDetailViewModel(this.useCase) : super(const AsyncValue.loading()) {
+class ExploreViewModel extends StateNotifier<AsyncValue<List<Country>>> {
+  ExploreViewModel(this.useCase) : super(const AsyncValue.loading()) {
     fetchStockDetail();
   }
 

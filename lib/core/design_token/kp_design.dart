@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:jitta_ranking/core/theme/theme.dart';
 
 class KpDesign {
-  static const Color primaryColor = Color(0xFFF5F7FA);
-  static const Color secondaryColor = Color(0xFFCBD5E0);
-  static const Color highlightColor = Color(0xFF3B82F6);
-  static const Color alertColor = Color(0xFFF87171);
-  static const Color successColor = Color(0xFF34D399);
-  static const Color warningColor = Color(0xFFFBBF24);
-  static const Color textColor = Color(0xFF1A202C);
+  static const Color primaryColor = Color(0xFFFFFFFF);
+  static const Color secondaryColor = Color(0xFFF1F5F9);
+  static const Color highlightColor = Color(0xFF47C6F1);
+  static const Color alertColor = Color(0xFFEF4444);
+  static const Color successColor = Color(0xFF10B981);
+  static const Color warningColor = Color(0xFFF59E0B);
+  static const Color textColor = Color(0xFF111827);
 
   static TextStyle headline1 = TextStyle(
     fontSize: 32,
@@ -38,7 +38,7 @@ class KpDesign {
     fontFamily: fontFamily,
   );
 
-  static TextStyle cryptoPriceStyle = TextStyle(
+  static TextStyle priceStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
     color: successColor,

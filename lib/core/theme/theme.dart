@@ -75,6 +75,7 @@ class KpTheme {
           elevation: 0,
           centerTitle: true,
           titleTextStyle: KpDesign.headline2.copyWith(color: Colors.white),
+          iconTheme: const IconThemeData(color: KpDesign.textColor),
         ),
         iconTheme: const IconThemeData(
           color: KpDesign.highlightColor,

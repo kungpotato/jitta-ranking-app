@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jitta_ranking/core/design_token/kp_design.dart';
 import 'package:jitta_ranking/core/ui/atoms/kp_text.dart';
 import 'package:jitta_ranking/core/ui/organisms/kp_appbar.dart';
+import 'package:jitta_ranking/feature/explore/presentation/pages/ranking_page.dart';
 import 'package:jitta_ranking/feature/explore/presentation/view_model/explore_view_model.dart';
 
 class ExplorePage extends HookConsumerWidget {
@@ -10,7 +11,7 @@ class ExplorePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(stockDetailProvider);
+    final state = ref.watch(exploreProvider);
 
     return Scaffold(
       appBar: KpAppBar(
@@ -75,7 +76,16 @@ class GridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RankingPage(
+              name: label,
+            ),
+          ),
+        );
+      },
       child: Stack(
         children: [
           ClipRRect(

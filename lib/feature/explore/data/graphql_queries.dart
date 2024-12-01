@@ -8,3 +8,37 @@ const String fetchCountryQuery = '''
     }
   }
 ''';
+
+const String fetchRankingQuery = r'''
+  query ListJittaSectorType($filter: RankingInput) {
+    jittaRanking(filter: $filter) {
+      data {
+        title
+        symbol
+        stockId
+        rank
+        status
+        nativeName
+        name
+        market
+        jittaScore
+        latestLossChance
+        latestPrice
+        latestPriceDiff {
+          percent
+          type
+          value
+        }
+        industry
+        jittaRankScore
+        currency
+        exchange
+        sector {
+          name
+          id
+        }
+      }
+      count
+    }
+  }
+''';
