@@ -36,6 +36,7 @@ mixin _$StockRanking {
   String get currency => throw _privateConstructorUsedError;
   String get exchange => throw _privateConstructorUsedError;
   Sector get sector => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get nativeName => throw _privateConstructorUsedError;
 
   /// Serializes this StockRanking to a JSON map.
@@ -71,6 +72,7 @@ abstract class $StockRankingCopyWith<$Res> {
       String currency,
       String exchange,
       Sector sector,
+      String? id,
       String? nativeName});
 
   $LatestPriceDiffCopyWith<$Res> get latestPriceDiff;
@@ -108,6 +110,7 @@ class _$StockRankingCopyWithImpl<$Res, $Val extends StockRanking>
     Object? currency = null,
     Object? exchange = null,
     Object? sector = null,
+    Object? id = freezed,
     Object? nativeName = freezed,
   }) {
     return _then(_value.copyWith(
@@ -175,6 +178,10 @@ class _$StockRankingCopyWithImpl<$Res, $Val extends StockRanking>
           ? _value.sector
           : sector // ignore: cast_nullable_to_non_nullable
               as Sector,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       nativeName: freezed == nativeName
           ? _value.nativeName
           : nativeName // ignore: cast_nullable_to_non_nullable
@@ -228,6 +235,7 @@ abstract class _$$StockRankingImplCopyWith<$Res>
       String currency,
       String exchange,
       Sector sector,
+      String? id,
       String? nativeName});
 
   @override
@@ -265,6 +273,7 @@ class __$$StockRankingImplCopyWithImpl<$Res>
     Object? currency = null,
     Object? exchange = null,
     Object? sector = null,
+    Object? id = freezed,
     Object? nativeName = freezed,
   }) {
     return _then(_$StockRankingImpl(
@@ -332,6 +341,10 @@ class __$$StockRankingImplCopyWithImpl<$Res>
           ? _value.sector
           : sector // ignore: cast_nullable_to_non_nullable
               as Sector,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       nativeName: freezed == nativeName
           ? _value.nativeName
           : nativeName // ignore: cast_nullable_to_non_nullable
@@ -360,6 +373,7 @@ class _$StockRankingImpl implements _StockRanking {
       required this.currency,
       required this.exchange,
       required this.sector,
+      this.id,
       this.nativeName});
 
   factory _$StockRankingImpl.fromJson(Map<String, dynamic> json) =>
@@ -398,11 +412,13 @@ class _$StockRankingImpl implements _StockRanking {
   @override
   final Sector sector;
   @override
+  final String? id;
+  @override
   final String? nativeName;
 
   @override
   String toString() {
-    return 'StockRanking(title: $title, symbol: $symbol, stockId: $stockId, rank: $rank, status: $status, name: $name, market: $market, jittaScore: $jittaScore, latestLossChance: $latestLossChance, latestPrice: $latestPrice, latestPriceDiff: $latestPriceDiff, industry: $industry, jittaRankScore: $jittaRankScore, currency: $currency, exchange: $exchange, sector: $sector, nativeName: $nativeName)';
+    return 'StockRanking(title: $title, symbol: $symbol, stockId: $stockId, rank: $rank, status: $status, name: $name, market: $market, jittaScore: $jittaScore, latestLossChance: $latestLossChance, latestPrice: $latestPrice, latestPriceDiff: $latestPriceDiff, industry: $industry, jittaRankScore: $jittaRankScore, currency: $currency, exchange: $exchange, sector: $sector, id: $id, nativeName: $nativeName)';
   }
 
   @override
@@ -434,6 +450,7 @@ class _$StockRankingImpl implements _StockRanking {
             (identical(other.exchange, exchange) ||
                 other.exchange == exchange) &&
             (identical(other.sector, sector) || other.sector == sector) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.nativeName, nativeName) ||
                 other.nativeName == nativeName));
   }
@@ -458,6 +475,7 @@ class _$StockRankingImpl implements _StockRanking {
       currency,
       exchange,
       sector,
+      id,
       nativeName);
 
   /// Create a copy of StockRanking
@@ -494,6 +512,7 @@ abstract class _StockRanking implements StockRanking {
       required final String currency,
       required final String exchange,
       required final Sector sector,
+      final String? id,
       final String? nativeName}) = _$StockRankingImpl;
 
   factory _StockRanking.fromJson(Map<String, dynamic> json) =
@@ -531,6 +550,8 @@ abstract class _StockRanking implements StockRanking {
   String get exchange;
   @override
   Sector get sector;
+  @override
+  String? get id;
   @override
   String? get nativeName;
 

@@ -4,14 +4,14 @@ import 'package:jitta_ranking/core/design_token/kp_design.dart';
 import 'package:jitta_ranking/core/ui/atoms/kp_text.dart';
 import 'package:jitta_ranking/core/ui/organisms/kp_appbar.dart';
 import 'package:jitta_ranking/feature/explore/presentation/pages/ranking_page.dart';
-import 'package:jitta_ranking/feature/explore/presentation/view_model/explore_view_model.dart';
+import 'package:jitta_ranking/feature/explore/presentation/view_model/explore/explore_view_model.dart';
 
 class ExplorePage extends HookConsumerWidget {
   const ExplorePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(exploreProvider);
+    final state = ref.watch(exploreViewModelProvider);
 
     return Scaffold(
       appBar: KpAppBar(
@@ -41,6 +41,7 @@ class ExplorePage extends HookConsumerWidget {
                     imageUrl:
                         'https://www.jitta.com/assets/img/discover/country/${data[index].code.toLowerCase()}.jpg',
                     label: data[index].name,
+                    market: data[index].code,
                   ),
                   childCount: 20,
                 ),
@@ -66,11 +67,13 @@ class GridItem extends StatelessWidget {
   const GridItem({
     required this.imageUrl,
     required this.label,
+    required this.market,
     super.key,
   });
 
   final String imageUrl;
   final String label;
+  final String market;
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +85,7 @@ class GridItem extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => RankingPage(
               name: label,
+              market: market,
             ),
           ),
         );

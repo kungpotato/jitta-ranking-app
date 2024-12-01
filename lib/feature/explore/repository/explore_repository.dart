@@ -3,7 +3,9 @@ import 'package:jitta_ranking/core/network/graphql_client.dart';
 import 'package:jitta_ranking/feature/explore/data/remote_data_source.dart';
 import 'package:jitta_ranking/feature/explore/domain/entities/country/country.dart';
 import 'package:jitta_ranking/feature/explore/domain/entities/ranking/stock_ranking.dart';
+import 'package:jitta_ranking/feature/explore/domain/entities/stock/stock_detail.dart';
 import 'package:jitta_ranking/feature/explore/domain/usecases/fetch_ranking_usecase.dart';
+import 'package:jitta_ranking/feature/explore/domain/usecases/fetch_stock_usecase.dart';
 
 final exploreSourceProvider = Provider<ExploreDataSource>(
   (ref) => ExploreDataSource(GraphQLConfig.client),
@@ -18,6 +20,8 @@ abstract class ExploreRepository {
   Future<List<Country>> fetchCountry();
 
   Future<List<StockRanking>> fetchStockRacking(FetchRankingParams params);
+
+  Future<StockDetail> fetchStockDetail(FetchStockParams params);
 }
 
 class ExploreRepositoryImpl implements ExploreRepository {
@@ -31,4 +35,8 @@ class ExploreRepositoryImpl implements ExploreRepository {
   @override
   Future<List<StockRanking>> fetchStockRacking(FetchRankingParams params) =>
       remoteDataSource.fetchStockRacking(params);
+
+  @override
+  Future<StockDetail> fetchStockDetail(FetchStockParams params) =>
+      remoteDataSource.fetchStockDetail(params);
 }

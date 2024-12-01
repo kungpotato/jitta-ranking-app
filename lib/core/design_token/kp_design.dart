@@ -11,14 +11,14 @@ class KpDesign {
   static const Color textColor = Color(0xFF111827);
 
   static TextStyle headline1 = TextStyle(
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: FontWeight.bold,
     color: highlightColor,
     fontFamily: fontFamily,
   );
 
   static TextStyle headline2 = TextStyle(
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     color: textColor,
     fontFamily: fontFamily,

@@ -42,3 +42,14 @@ const String fetchRankingQuery = r'''
     }
   }
 ''';
+
+const String fetchStockDetailQuery = r'''
+  query ListJittaSectorType($stockId: Int, $stockId2: String) {
+    stock(stockId: $stockId, id: $stockId2) {
+      type
+      title
+      symbol
+      summary
+    }
+  }
+''';

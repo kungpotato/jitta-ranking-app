@@ -22,6 +22,7 @@ class StockRanking with _$StockRanking {
     required String currency,
     required String exchange,
     required Sector sector,
+    String? id,
     String? nativeName,
   }) = _StockRanking;
 

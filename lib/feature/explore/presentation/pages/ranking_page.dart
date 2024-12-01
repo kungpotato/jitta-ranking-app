@@ -3,17 +3,18 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jitta_ranking/core/design_token/kp_design.dart';
 import 'package:jitta_ranking/core/ui/atoms/kp_text.dart';
 import 'package:jitta_ranking/core/ui/organisms/kp_appbar.dart';
-import 'package:jitta_ranking/feature/explore/presentation/view_model/ranking_view_model.dart';
+import 'package:jitta_ranking/feature/explore/presentation/view_model/ranking/ranking_view_model.dart';
 import 'package:jitta_ranking/feature/explore/presentation/widgets/rank_item.dart';
 
 class RankingPage extends HookConsumerWidget {
-  const RankingPage({required this.name, super.key});
+  const RankingPage({required this.name, required this.market, super.key});
 
   final String name;
+  final String market;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(rankingProvider);
+    final state = ref.watch(rankingViewModelProvider(market));
 
     return Scaffold(
       appBar: KpAppBar(

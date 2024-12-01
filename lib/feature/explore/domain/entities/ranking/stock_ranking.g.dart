@@ -25,6 +25,7 @@ _$StockRankingImpl _$$StockRankingImplFromJson(Map<String, dynamic> json) =>
       currency: json['currency'] as String,
       exchange: json['exchange'] as String,
       sector: Sector.fromJson(json['sector'] as Map<String, dynamic>),
+      id: json['id'] as String?,
       nativeName: json['nativeName'] as String?,
     );
 
@@ -46,6 +47,7 @@ Map<String, dynamic> _$$StockRankingImplToJson(_$StockRankingImpl instance) =>
       'currency': instance.currency,
       'exchange': instance.exchange,
       'sector': instance.sector,
+      'id': instance.id,
       'nativeName': instance.nativeName,
     };
 
