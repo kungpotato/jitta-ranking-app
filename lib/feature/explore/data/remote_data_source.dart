@@ -1,16 +1,17 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:jitta_ranking/feature/explore/domain/entities/country/country.dart';
 
 import 'graphql_queries.dart';
 
-class StockDetailDataSource {
-  StockDetailDataSource(this.client);
+class ExploreDataSource {
+  ExploreDataSource(this.client);
 
   final GraphQLClient client;
 
-  Future<Map<String, dynamic>> fetchStockDetail() async {
+  Future<List<Country>> fetchCountry() async {
     final result = await client.query(
       QueryOptions(
-        document: gql(fetchPokemonListQuery),
+        document: gql(fetchCountryQuery),
         variables: const {
           'stockId': '1',
           'stockStockId2': 1,
@@ -22,6 +23,8 @@ class StockDetailDataSource {
       throw Exception(result.exception.toString());
     }
 
-    return result.data!['stock'] as Map<String, dynamic>;
+    return (result.data!['availableCountry'] as List<dynamic>)
+        .map((e) => Country.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 }

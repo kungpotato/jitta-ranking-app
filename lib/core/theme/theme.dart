@@ -22,7 +22,7 @@ class KpTheme {
           tertiary: KpDesign.successColor,
           outline: KpDesign.warningColor,
         ),
-        scaffoldBackgroundColor: KpDesign.secondaryColor,
+        scaffoldBackgroundColor: KpDesign.primaryColor,
         textTheme: TextTheme(
           displayLarge: KpDesign.headline1,
           displayMedium: KpDesign.headline2,

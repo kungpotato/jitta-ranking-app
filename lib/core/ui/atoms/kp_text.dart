@@ -8,7 +8,8 @@ class KpText extends StatelessWidget {
     this.textAlign = TextAlign.start,
     this.maxLines,
     this.overflow = TextOverflow.ellipsis,
-  }) : style = KpDesign.headline1;
+    Color? color,
+  }) : style = KpDesign.headline1.copyWith(color: color);
 
   KpText.headline2({
     required this.text,
@@ -16,7 +17,8 @@ class KpText extends StatelessWidget {
     this.textAlign = TextAlign.start,
     this.maxLines,
     this.overflow = TextOverflow.ellipsis,
-  }) : style = KpDesign.headline2;
+    Color? color,
+  }) : style = KpDesign.headline2.copyWith(color: color);
 
   KpText.body({
     required this.text,
@@ -24,7 +26,8 @@ class KpText extends StatelessWidget {
     this.textAlign = TextAlign.start,
     this.maxLines,
     this.overflow = TextOverflow.clip,
-  }) : style = KpDesign.bodyText;
+    Color? color,
+  }) : style = KpDesign.bodyText.copyWith(color: color);
 
   KpText.button({
     required this.text,
@@ -32,7 +35,8 @@ class KpText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.maxLines,
     this.overflow = TextOverflow.ellipsis,
-  }) : style = KpDesign.buttonText;
+    Color? color,
+  }) : style = KpDesign.buttonText.copyWith(color: color);
 
   const KpText.custom({
     required this.text,

@@ -38,7 +38,7 @@ class KpDesign {
     fontFamily: fontFamily,
   );
 
-  static TextStyle priceStyle = TextStyle(
+  static TextStyle cryptoPriceStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
     color: successColor,

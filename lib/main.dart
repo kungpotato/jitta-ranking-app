@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jitta_ranking/core/theme/theme.dart';
-import 'package:jitta_ranking/feature/explore/presentation/pages/stockl_detail_page.dart';
+import 'package:jitta_ranking/feature/explore/presentation/pages/explore_page.dart';
 
 void main() {
   runApp(
@@ -18,6 +18,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'Flutter Demo',
         theme: KpTheme.theme,
-        home: const StockDetailPage(),
+        home: const ExplorePage(),
       );
 }
