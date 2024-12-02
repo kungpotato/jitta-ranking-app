@@ -50,5 +50,9 @@ Installation and Setup
    ```
 
    ```bash
+  flutter test
+   ```
+
+   ```bash
   flutter run
    ```
