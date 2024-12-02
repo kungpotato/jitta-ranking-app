@@ -37,7 +37,7 @@ Prerequisites
 Installation and Setup
 
    ```bash
-  git clone xxx
+  git clone https://github.com/kungpotato/jitta-ranking-app.git
   cd jitta-ranking-app
    ```
 
