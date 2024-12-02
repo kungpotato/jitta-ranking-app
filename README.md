@@ -4,17 +4,27 @@ Welcome to the Jitta Ranking App, a mobile application built to display a stock 
 a GraphQL API. Users can explore stock details, filter stocks by market and sector, and enjoy
 offline support for seamless usage.
 
-![alt text](https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.49.png?raw=true)
-{width=300}
-![alt text](https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.54.png?raw=true)
-{width=300}
-
 ## Features
 
 1. Stock Ranking List
 2. Stock Details Screen
 3. Filters
 4. Offline Support
+
+## Demo Sample
+
+<div style="text-align: center">
+    <table>
+        <tr>
+            <td style="text-align: center">
+                <img src="https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.49.png?raw=true" width="200"/>
+            </td>            
+            <td style="text-align: center">
+                <img src="https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.54.png?raw=true" width="200"/>
+            </td>
+        </tr>
+    </table>
+</div>
 
 ## Architecture Overview
 
