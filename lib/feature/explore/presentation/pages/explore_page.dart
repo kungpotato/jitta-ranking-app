@@ -30,29 +30,31 @@ class ExplorePage extends HookConsumerWidget {
                 child: KpText.headline2(text: 'Explore'),
               ),
             ),
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: KpDesign.spacingMedium,
-                vertical: KpDesign.spacingMedium,
-              ),
-              sliver: SliverGrid(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) => GridItem(
-                    imageUrl:
-                        'https://www.jitta.com/assets/img/discover/country/${data[index].code.toLowerCase()}.jpg',
-                    label: data[index].name,
-                    market: data[index].code,
+            if (data.isNotEmpty)
+              SliverPadding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: KpDesign.spacingMedium,
+                  vertical: KpDesign.spacingMedium,
+                ),
+                sliver: SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) => GridItem(
+                      imageUrl:
+                          'https://www.jitta.com/assets/img/discover/country/${data[index].code.toLowerCase()}.jpg',
+                      label: data[index].name,
+                      market: data[index].code,
+                    ),
+                    childCount: data.length,
                   ),
-                  childCount: 20,
-                ),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  childAspectRatio: 0.8,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                    childAspectRatio: 0.8,
+                  ),
                 ),
               ),
-            ),
+            if (data.isEmpty) Center(child: KpText.body(text: 'Data is empty')),
           ],
         ),
         loading: () => const Center(child: CircularProgressIndicator()),

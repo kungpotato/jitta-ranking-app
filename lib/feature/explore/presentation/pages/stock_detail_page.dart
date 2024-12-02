@@ -31,6 +31,33 @@ class StockDetailPage extends HookConsumerWidget {
                 child: KpText.headline2(text: data.name),
               ),
             ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: KpDesign.spacingMedium,
+                  top: KpDesign.spacingMedium,
+                ),
+                child: KpText.headline2(text: data.symbol),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: KpDesign.spacingMedium,
+                  top: KpDesign.spacingMedium,
+                ),
+                child: KpText.headline2(text: data.industry),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: KpDesign.spacingMedium,
+                  top: KpDesign.spacingMedium,
+                ),
+                child: KpText.headline2(text: data.latestPrice.toString()),
+              ),
+            ),
           ],
         ),
         loading: () => const Center(child: CircularProgressIndicator()),

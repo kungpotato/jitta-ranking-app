@@ -136,13 +136,14 @@ class __$$CountryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CountryImpl implements _Country {
+class _$CountryImpl extends _Country {
   const _$CountryImpl(
       {required this.name,
       required this.flag,
       required final List<String> displayExchange,
       required this.code})
-      : _displayExchange = displayExchange;
+      : _displayExchange = displayExchange,
+        super._();
 
   factory _$CountryImpl.fromJson(Map<String, dynamic> json) =>
       _$$CountryImplFromJson(json);
@@ -162,28 +163,6 @@ class _$CountryImpl implements _Country {
   @override
   final String code;
 
-  @override
-  String toString() {
-    return 'Country(name: $name, flag: $flag, displayExchange: $displayExchange, code: $code)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CountryImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.flag, flag) || other.flag == flag) &&
-            const DeepCollectionEquality()
-                .equals(other._displayExchange, _displayExchange) &&
-            (identical(other.code, code) || other.code == code));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, flag,
-      const DeepCollectionEquality().hash(_displayExchange), code);
-
   /// Create a copy of Country
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -200,12 +179,13 @@ class _$CountryImpl implements _Country {
   }
 }
 
-abstract class _Country implements Country {
+abstract class _Country extends Country {
   const factory _Country(
       {required final String name,
       required final String flag,
       required final List<String> displayExchange,
       required final String code}) = _$CountryImpl;
+  const _Country._() : super._();
 
   factory _Country.fromJson(Map<String, dynamic> json) = _$CountryImpl.fromJson;
 

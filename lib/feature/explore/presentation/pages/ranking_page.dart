@@ -32,20 +32,22 @@ class RankingPage extends HookConsumerWidget {
                 child: KpText.headline2(text: 'Stock Ranking'),
               ),
             ),
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: KpDesign.spacingMedium,
-                vertical: KpDesign.spacingSmall,
-              ),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) => RankItem(
-                    data: data[index],
+            if (data.isNotEmpty)
+              SliverPadding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: KpDesign.spacingMedium,
+                  vertical: KpDesign.spacingSmall,
+                ),
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) => RankItem(
+                      data: data[index],
+                    ),
+                    childCount: data.length,
                   ),
-                  childCount: data.length,
                 ),
               ),
-            ),
+            if (data.isEmpty) Center(child: KpText.body(text: 'Data is empty')),
           ],
         ),
         loading: () => const Center(child: CircularProgressIndicator()),
