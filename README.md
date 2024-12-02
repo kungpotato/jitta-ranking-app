@@ -5,7 +5,9 @@ a GraphQL API. Users can explore stock details, filter stocks by market and sect
 offline support for seamless usage.
 
 ![alt text](https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.49.png?raw=true)
+{width=300}
 ![alt text](https://github.com/kungpotato/jitta-ranking-app/blob/master/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202024-12-02%20at%2007.34.54.png?raw=true)
+{width=300}
 
 ## Features
 
